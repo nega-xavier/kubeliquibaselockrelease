@@ -9,13 +9,12 @@ import liquibase.sqlgenerator.SqlGeneratorFactory;
 import liquibase.sqlgenerator.core.LockDatabaseChangeLogGenerator;
 import liquibase.statement.core.LockDatabaseChangeLogStatement;
 import liquibase.statement.core.UpdateStatement;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Timestamp;
 
+@Slf4j
 public class LockDatabaseChangeLogGeneratorKubernetes extends LockDatabaseChangeLogGenerator {
-    private static final Log LOG = LogFactory.getLog(LockDatabaseChangeLogGeneratorKubernetes.class);
 
     @Override
     public int getPriority() {
